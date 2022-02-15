@@ -46,6 +46,14 @@ const prosents = (random_discount * summa ) / 100
 const profit =  cost - prosents
 console.log(profit)  //11
 
-console.log(`Максимальна ціна: ${max_price}; Мінімальна ціна: ${min_price}; Загальна сума: ${summa}; Сума заокруглена до меншого: ${less_summa}; 
-Сума заокруглена до сотих: ${to_hundreds}; Чи парна сума: ${boolean_answer}; Залишок без округлення: ${remainder_without_rounding}; Середнє значення: ${new_avarage};
-Випадкова знижка в межах від 5 до 30%: ${discount}; Випадкова знижка в межах від 24 до 78% з 2-а знаками після коми: ${new_random_discount}; Прибуток: ${profit}; `)
+console.log(`Максимальна ціна: ${max_price}; 
+Мінімальна ціна: ${min_price}; 
+Загальна сума: ${summa}; 
+Сума заокруглена до меншого: ${less_summa}; 
+Сума заокруглена до сотих: ${to_hundreds}; 
+Чи парна сума: ${boolean_answer}; 
+Залишок без округлення: ${remainder_without_rounding}; 
+Середнє значення: ${new_avarage};
+Випадкова знижка в межах від 5 до 30%: ${discount}; 
+Випадкова знижка в межах від 24 до 78% з 2-а знаками після коми: ${new_random_discount}; 
+Прибуток: ${profit}; `)
