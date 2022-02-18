@@ -21,3 +21,4 @@ else {
         counter+=i;
     }
 }alert(counter)
+alert("Щоб продовжити, оновіть сторінку!")
