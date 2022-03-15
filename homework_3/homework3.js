@@ -8,14 +8,11 @@ const getMaxDigit = (num) => {
 }
 
 const powNum = (num, pow) => {
-    let c = num;
     let f = 1;
-
-    while (f < pow) {
-        c *=num;
-        f+=1;
+    for (let i = 0; i<pow; i++){
+    	f*=num
     }
-    return c;
+    return f;
 }
 
 const toUpperCaseFirstLetter = (str) => {
@@ -30,35 +27,20 @@ const amountAfterTax = (sum) => {
 
     return amount_after_tax
 }
-// const convertCurrency = (money) => {
-//     if (money == /^\d+[^.]\$$/) {
-//         let sum = money * 25 
-//         return sum + "uah"
-//     }
-// }
+
 const getRandomNumber = (N, M) => {
-    random_number = Math.round(Math.random()*(N - M) + M)
+    let random_number = Math.round(Math.random()*(N - M) + M)
     return random_number
 }
 
-const getRandomPassword = (counter) => {
-    let length = counter,
-	charset = "0123456789";
-	res = '';
-    i = 0
-    counter = charset.length;
-    while (i<length) {
-        i+=1
-        res += charset.charAt(Math.floor(Math.random() * counter));
-    }		
-	return res;
-}
+const getRandomPassword = (counter = 8) => {
+  let res = "";
+  for (let i = 0; i < counter; i++) {
+    res += Math.floor(Math.random() * 9);
+  }
+  return res;
+};
 
-// const deleteLetters = (delete_leter, string) =>{
-//     let string = string.replace(/[delete_leter]/);
-
-
-// }
 
 document.writeln(`
 1. Найбільша цифра у числі 45678: ${getMaxDigit(45678)}; 
