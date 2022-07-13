@@ -1,44 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Just simple random sounds</title>
-  <link rel="stylesheet" href="homework10.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Just simple random sounds</title>
+    <link rel="stylesheet" href="homework10.css" />
+  </head>
+  <body>
+    <h1>Favourite Rammstein songs</h1>
 
+    <div class="keys">
+      <div data-key="1" class="key">
+        <kbd>First</kbd>
+        <span class="sound">Mutter</span>
+      </div>
+      <div data-key="2" class="key">
+        <kbd>Second</kbd>
+        <span class="sound">Nebel</span>
+      </div>
+      <div data-key="3" class="key">
+        <kbd>Third</kbd>
+        <span class="sound">Puppe</span>
+      </div>
+      <div data-key="4" class="key">
+        <kbd>Fourth</kbd>
+        <span class="sound">Ohne Dish</span>
+      </div>
+      <div data-key="5" class="key">
+        <kbd>Fifth</kbd>
+        <span class="sound">Seemann</span>
+      </div>
+      <div data-key="6" class="key">
+        <kbd>Sixth</kbd>
+        <span class="sound">Sonne</span>
+      </div>
 
-  <div class="keys">
-    <div data-key="1" class="key">
-      <kbd>!</kbd>
-      <span class="sound">guitar example</span>
+      <div data-key="7" class="key">
+        <kbd>Seventh</kbd>
+        <span class="sound">Spring</span>
+      </div>
     </div>
-    <div data-key="2" class="key">
-      <kbd>&</kbd>
-      <span class="sound">guitar example</span>
-    </div>
-    <div data-key="3" class="key">
-      <kbd>?</kbd>
-      <span class="sound">guitar example</span>
-    </div>
-    <div data-key="4" class="key">
-      <kbd>|</kbd>
-      <span class="sound">guitar example</span>
-    </div>
-    <div data-key="5" class="key">
-      <kbd>-</kbd>
-      <span class="sound">guitar example</span>
-    </div>
-   
-  </div>
 
-  <audio data-key="1" src="sounds/mixkit-guitar-stroke-down-slow-2339.wav"></audio>
-  <audio data-key="2" src="sounds/mixkit-guitar-stroke-up-slow-2338.wav"></audio>
-  <audio data-key="3" src="sounds/mixkit-nylon-guitar-single-note-2332.wav"></audio>
-  <audio data-key="4" src="sounds/mixkit-short-guitar-riff-2322.wav"></audio>
-  <audio data-key="5" src="sounds/mixkit-western-guitar-drum-single-2333.wav"></audio>
+    <audio data-key="1" src="sounds/MUTTER - Rammstein.mp3"></audio>
+    <audio data-key="2" src="sounds/Nebel - Rammstein.mp3"></audio>
+    <audio data-key="3" src="sounds/PUPPE - Rammstein.mp3"></audio>
+    <audio data-key="4" src="sounds/Rammstein - Ohne Dish.mp3"></audio>
+    <audio data-key="5" src="sounds/Seemann - Rammstein.mp3"></audio>
+    <audio data-key="6" src="sounds/SONNE - Rammstein.mp3"></audio>
+    <audio data-key="7" src="sounds/SPRING - Rammstein.mp3"></audio>
 
-  <script src="homework10.js"></script>
+    <!--<script src="homework10.js"></script>-->
+    <script>
+      function removeTransition(e) {
+        if (e.propertyName !== "transform") return;
+        e.target.classList.remove("playing");
+      }
 
-</body>
+      function playSound(e) {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+        if (!audio) return;
+
+        key.classList.add("playing");
+        audio.currentTime = 0;
+        audio.play();
+      }
+
+      const keys = Array.from(document.querySelectorAll(".key"));
+      keys.forEach((key) =>
+        key.addEventListener("transitionend", removeTransition)
+      );
+      window.addEventListener("keydown", playSound);
+    </script>
+  </body>
 </html>
