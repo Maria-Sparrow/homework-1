@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Homework #9</title>
+</head>
+<body>
+    <div class="wrapper">
+       <div class="firstblock">
+          <button class="buttonForSimpleSquare" style="margin-bottom: 10px;">Press to start generateBlocks</button>
+       </div>
+       <div class="secondblock">
+          <button class="buttonForIntervalSquare" style="margin-bottom: 10px;">Press to start generateBlocksInterval</button>
+       </div>
+    </div>
+</body>
+<style>
+html {
+    background-image: url('./anime.jpg');
+    background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  }
+button{
+    border: .2rem solid black;
+    border-radius: .5rem;
+    margin: 1rem;
+    padding: 1rem .5rem;
+    transition: all .07s ease;
+    width: 10rem;
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    text-shadow: 0 0 .5rem black;
+}
+.wrapper {
+   display: flex;
+   justify-content: space-around;
+}
+.firstblock, .secondblock {
+   max-width: 135px;
+   text-align: center;
+}
+.square {
+    display: inline-block;
+   width: 25px;
+   height: 25px;
+   margin-bottom: -4px;
+};
+</style>
+<script src="homework9.js"></script>
+</html>
