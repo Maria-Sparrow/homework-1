@@ -9,67 +9,46 @@
     <h1>Favourite Rammstein songs</h1>
 
     <div class="keys">
-      <div data-key="1" class="key">
+      <div data-key="49" class="key">
         <kbd>First</kbd>
         <span class="sound">Mutter</span>
       </div>
-      <div data-key="2" class="key">
+      <div data-key="50" class="key">
         <kbd>Second</kbd>
         <span class="sound">Nebel</span>
       </div>
-      <div data-key="3" class="key">
+      <div data-key="51" class="key">
         <kbd>Third</kbd>
         <span class="sound">Puppe</span>
       </div>
-      <div data-key="4" class="key">
+      <div data-key="52" class="key">
         <kbd>Fourth</kbd>
         <span class="sound">Ohne Dish</span>
       </div>
-      <div data-key="5" class="key">
+      <div data-key="53" class="key">
         <kbd>Fifth</kbd>
         <span class="sound">Seemann</span>
       </div>
-      <div data-key="6" class="key">
+      <div data-key="54" class="key">
         <kbd>Sixth</kbd>
         <span class="sound">Sonne</span>
       </div>
 
-      <div data-key="7" class="key">
+      <div data-key="55" class="key">
         <kbd>Seventh</kbd>
         <span class="sound">Spring</span>
       </div>
     </div>
 
-    <audio data-key="1" src="sounds/MUTTER - Rammstein.mp3"></audio>
-    <audio data-key="2" src="sounds/Nebel - Rammstein.mp3"></audio>
-    <audio data-key="3" src="sounds/PUPPE - Rammstein.mp3"></audio>
-    <audio data-key="4" src="sounds/Rammstein - Ohne Dish.mp3"></audio>
-    <audio data-key="5" src="sounds/Seemann - Rammstein.mp3"></audio>
-    <audio data-key="6" src="sounds/SONNE - Rammstein.mp3"></audio>
-    <audio data-key="7" src="sounds/SPRING - Rammstein.mp3"></audio>
+    <audio data-key="49" src="sounds/MUTTER.mp3"></audio>
+    <audio data-key="50" src="sounds/Nebel.mp3"></audio>
+    <audio data-key="51" src="sounds/PUPPE.mp3"></audio>
+    <audio data-key="52" src="sounds/Ohne Dish.mp3"></audio>
+    <audio data-key="53" src="sounds/Seemann.mp3"></audio>
+    <audio data-key="54" src="sounds/SONNE.mp3"></audio>
+    <audio data-key="55" src="sounds/SPRING.mp3"></audio>
 
-    <!--<script src="homework10.js"></script>-->
-    <script>
-      function removeTransition(e) {
-        if (e.propertyName !== "transform") return;
-        e.target.classList.remove("playing");
-      }
+    <script src="homework10.js"></script>
 
-      function playSound(e) {
-        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-        const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-        if (!audio) return;
-
-        key.classList.add("playing");
-        audio.currentTime = 0;
-        audio.play();
-      }
-
-      const keys = Array.from(document.querySelectorAll(".key"));
-      keys.forEach((key) =>
-        key.addEventListener("transitionend", removeTransition)
-      );
-      window.addEventListener("keydown", playSound);
-    </script>
   </body>
 </html>
