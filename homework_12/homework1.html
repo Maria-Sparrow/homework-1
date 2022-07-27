@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="homework12.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Characters list</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <button class="translate">Wookiee</button>
+        <form>
+          <input
+            type="text"
+            class="header-search"
+            placeholder="search character"
+          />
+        </form>
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <div class="container">
+        <form>
+          <input
+            type="text"
+            class="open-character"
+            placeholder="Enter numbers from 1 to 6 to get characters"
+            style="width: 270px;"
+          />
+        </form>
+        <button class="planets">Press to get list of planets</button>
+        <div class="pagination">
+          <button class="prevPlanets">Previous</button>
+          <button class="nextPlanets">Next</button>
+        </div>
+      </div>
+      <div class="heroes"></div>
+    </div>
+  </body>
+  <script src="homework12.js"></script>
+</html>
